@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #f8f8f8;
+      }
+      #todo-list {
+        width: 360px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 0;
+      }
+      form {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      form input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      form button {
+        padding: 10px 20px;
+        background-color: #2ecc71;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      form button:hover {
+        background-color: #27ae60;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+        background-color: #f5f5f5;
+      }
+      ul li span {
+        flex: 1;
+      }
+      ul li button {
+        padding: 5px;
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      ul li button:hover {
+        background-color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="todo-list">
+      <h1>To-Do List</h1>
+      <form>
+        <input type="text" id="new-todo" placeholder="Add a new task" />
+        <button id="add-todo">Add</button>
+      </form>
+      <ul id="todo-items"></ul>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const input = document.querySelector("#new-todo");
+      const todoList = document.querySelector("#todo-items");
+
+      // Add a new todo item to the list
+      function addItem(text) {
+        const li = document.createElement("
